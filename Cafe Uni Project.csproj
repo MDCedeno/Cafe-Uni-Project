@@ -201,5 +201,8 @@
   <ItemGroup>
     <None Include="bin\Pics\favicon_io\favicon-32x32.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="database\dbcafeuniproject.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -250,5 +250,12 @@ namespace Cafe_Uni_Project
                 btnSign.Enabled = true;
             }
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 Login = new Form1();
+            Login.ShowDialog();
+        }
     }
 }

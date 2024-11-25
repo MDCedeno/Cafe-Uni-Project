@@ -204,6 +204,10 @@ namespace Cafe_Uni_Project
                     DataTable AttendanceTracker = new DataTable();
                     AttendanceTracker.Load(reader);
                     dgvAttendanceTracker.DataSource = AttendanceTracker;
+
+                    // Set the same Microsoft Sans Serif font for both regular and alternating rows
+                    dgvAttendanceTracker.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
+                    dgvAttendanceTracker.AlternatingRowsDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular); // Disable alternating bold font
                 }
                 catch (Exception ex)
                 {
@@ -239,6 +243,10 @@ namespace Cafe_Uni_Project
                     DataTable AttendanceTracker = new DataTable();
                     AttendanceTracker.Load(reader);
                     dgvAttendanceTracker.DataSource = AttendanceTracker;
+
+                    // Set the same Microsoft Sans Serif font for both regular and alternating rows
+                    dgvAttendanceTracker.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
+                    dgvAttendanceTracker.AlternatingRowsDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular); // Disable alternating bold font
                 }
                 catch (Exception ex)
                 {
@@ -252,6 +260,8 @@ namespace Cafe_Uni_Project
 
                 btnReports.Visible = false;
                 btnRecruitment.Visible = false;
+                pbreport.Visible = false;
+                pbeval.Visible = false;
             }
         }
 
@@ -317,6 +327,10 @@ namespace Cafe_Uni_Project
                     DataTable AttendanceTracker = new DataTable();
                     AttendanceTracker.Load(reader);
                     dgvAttendanceTracker.DataSource = AttendanceTracker;
+
+                    // Set the same Microsoft Sans Serif font for both regular and alternating rows
+                    dgvAttendanceTracker.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
+                    dgvAttendanceTracker.AlternatingRowsDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular); // Disable alternating bold font
                 }
                 catch (Exception ex)
                 {
@@ -352,6 +366,10 @@ namespace Cafe_Uni_Project
                     DataTable AttendanceTracker = new DataTable();
                     AttendanceTracker.Load(reader);
                     dgvAttendanceTracker.DataSource = AttendanceTracker;
+
+                    // Set the same Microsoft Sans Serif font for both regular and alternating rows
+                    dgvAttendanceTracker.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
+                    dgvAttendanceTracker.AlternatingRowsDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular); // Disable alternating bold font
                 }
                 catch (Exception ex)
                 {

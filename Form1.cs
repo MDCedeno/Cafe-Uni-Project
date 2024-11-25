@@ -50,7 +50,7 @@ namespace Cafe_Uni_Project
                 {
                     if (txtUsername.Text == "Admin")
                     {
-                        MessageBox.Show("Login Successful for Admin", "Welcome to Cafe Uni");
+                        MessageBox.Show("Login Successful for Admin", "Welcome to 1128");
                         this.Hide();
                         globalvariable.globalusername = username;
                         Form4 Dashboard = new Form4();
@@ -58,7 +58,7 @@ namespace Cafe_Uni_Project
                     }
                     else 
                     {
-                        MessageBox.Show("Login Successful for Employee", "Welcome to Cafe Uni");
+                        MessageBox.Show("Login Successful for Employee", "Welcome to 1128");
                         this.Hide();
                         Form4 Dashboard = new Form4();
                         Dashboard.ShowDialog();

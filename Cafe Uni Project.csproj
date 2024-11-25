@@ -141,6 +141,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -154,6 +155,51 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Pics\Backround.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Pics\Dashboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Pics\Records.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Pics\Attendance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Pics\Status.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Pics\Reports.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Pics\Evaluation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Pics\favicon_io\android-chrome-192x192.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Pics\1128 Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Pics\Show Eye 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Pics\Hide Eye 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Pics\favicon_io\android-chrome-512x512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Pics\favicon_io\apple-touch-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Pics\favicon_io\favicon-16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Pics\favicon_io\favicon-32x32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

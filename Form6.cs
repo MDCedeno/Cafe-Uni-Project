@@ -607,6 +607,8 @@ namespace Cafe_Uni_Project
                 panelAdmin.Visible = false;
                 btnReports.Visible = false;
                 btnRecruitment.Visible = false;
+                pbreport.Visible = false;
+                pbeval.Visible = false;
             }
         }
 

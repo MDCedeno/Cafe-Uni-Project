@@ -304,6 +304,10 @@ namespace Cafe_Uni_Project
                 DataTable EmployeeStanding = new DataTable();
                 EmployeeStanding.Load(reader);
                 dgvEmployeeStanding.DataSource = EmployeeStanding;
+
+                // Set the same Microsoft Sans Serif font for both regular and alternating rows
+                dgvEmployeeStanding.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
+                dgvEmployeeStanding.AlternatingRowsDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular); // Disable alternating bold font
             }
             catch (Exception ex)
             {
@@ -376,6 +380,10 @@ namespace Cafe_Uni_Project
                 DataTable EmployeeStanding = new DataTable();
                 EmployeeStanding.Load(reader);
                 dgvEmployeeStanding.DataSource = EmployeeStanding;
+
+                // Set the same Microsoft Sans Serif font for both regular and alternating rows
+                dgvEmployeeStanding.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
+                dgvEmployeeStanding.AlternatingRowsDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular); // Disable alternating bold font
             }
             catch (Exception ex)
             {
@@ -392,6 +400,8 @@ namespace Cafe_Uni_Project
                 panelAdmin.Visible = false;
                 btnReports.Visible = false;
                 btnRecruitment.Visible = false;
+                pbreport.Visible = false;
+                pbeval.Visible = false;
             }
         }
     }

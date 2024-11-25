@@ -120,6 +120,53 @@ namespace Cafe_Uni_Project
 
         private void Form8_Load(object sender, EventArgs e)
         {
+            // For employee of the month
+            try
+            {
+                if (reader != null && !reader.IsClosed)
+                {
+                    reader.Close();
+                }
+
+                conn.Open();
+
+                // Query to calculate attendance and fetch the employee with the most attendance in the current month
+                string query = @"
+            SELECT PR.PRID, PR.First_Name, PR.Last_Name, COUNT(A.RecordID) AS TotalAttendance
+            FROM tblAttendancerecord A
+            INNER JOIN tblPersonalRecords PR ON A.PRID = PR.PRID
+            GROUP BY PR.PRID, PR.First_Name, PR.Last_Name
+            ORDER BY TotalAttendance DESC
+            LIMIT 3"; // Only retrieve the top 3 employee
+
+                cmd = new MySqlCommand(query, conn);
+                reader = cmd.ExecuteReader();
+
+                DataTable TopEmployee = new DataTable();
+                TopEmployee.Load(reader);
+
+                // Bind the result to the DataGridView
+                dgvEmpoftheMonth.DataSource = TopEmployee;
+
+                // Set the same Microsoft Sans Serif font for both regular and alternating rows
+                dgvEmpoftheMonth.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
+                dgvEmpoftheMonth.AlternatingRowsDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular); // Disable alternating bold font
+
+                if (dgvEmpoftheMonth.Rows.Count > 0)
+                {
+                    dgvEmpoftheMonth.Rows[0].DefaultCellStyle.BackColor = Color.Gold;
+                    dgvEmpoftheMonth.Rows[0].DefaultCellStyle.ForeColor = Color.Black;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading employee of the month record: " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
             // For employee rankings
             try
             {
@@ -143,6 +190,7 @@ namespace Cafe_Uni_Project
                 DataTable TopPerformers = new DataTable();
                 TopPerformers.Load(reader);
                 dgvRankings.DataSource = TopPerformers;
+
             }
             catch (Exception ex)
             {
@@ -192,6 +240,8 @@ namespace Cafe_Uni_Project
             {
                 btnReports.Visible = false;
                 btnRecruitment.Visible = false;
+                pbreport.Visible = false;
+                pbeval.Visible = false;
             }
         }
     }

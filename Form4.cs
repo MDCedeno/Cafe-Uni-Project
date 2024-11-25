@@ -270,11 +270,11 @@ namespace Cafe_Uni_Project
 
                 string query = "SELECT PR.Username, PR.First_Name, " +
                     "PR.Last_Name, PR.Middle_Name, " +
-                    "GS.Ranking FROM tblPersonalRecords PR " +
+                    "GS.Rank FROM tblPersonalRecords PR " +
                     "INNER JOIN tblGeneralStatus GS " +
                     "ON PR.PRID = GS.PRID " +
-                    "ORDER BY GS.Ranking ASC " +
-                    "LIMIT 5 ";
+                    "ORDER BY GS.Rank ASC " +
+                    "LIMIT 10 ";
 
                 cmd = new MySqlCommand(query, conn);
                 reader = cmd.ExecuteReader();
@@ -282,6 +282,27 @@ namespace Cafe_Uni_Project
                 DataTable TopPerformers = new DataTable();
                 TopPerformers.Load(reader);
                 dgvTopPerformers.DataSource = TopPerformers;
+
+                // Set the same Microsoft Sans Serif font for both regular and alternating rows
+                dgvTopPerformers.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
+                dgvTopPerformers.AlternatingRowsDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular); // Disable alternating bold font
+
+                if (dgvTopPerformers.Rows.Count > 0)
+                {
+                    dgvTopPerformers.Rows[0].DefaultCellStyle.BackColor = Color.Gold;
+                    dgvTopPerformers.Rows[0].DefaultCellStyle.ForeColor = Color.Black;
+                }
+
+                // Formatting the DataGridView
+                dgvTopPerformers.Columns[0].HeaderText = "Username";
+                dgvTopPerformers.Columns[1].HeaderText = "First Name";
+                dgvTopPerformers.Columns[2].HeaderText = "Last Name";
+                dgvTopPerformers.Columns[3].HeaderText = "Middle Name";
+                dgvTopPerformers.Columns[4].HeaderText = "Rank";
+                dgvTopPerformers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+                // Set the Rank column to sort automatically
+                dgvTopPerformers.Columns["Rank"].SortMode = DataGridViewColumnSortMode.Automatic;
             }
             catch (Exception ex)
             {
@@ -298,35 +319,125 @@ namespace Cafe_Uni_Project
                 panelAdmin.Visible = false;
                 btnReports.Visible = false;
                 btnRecruitment.Visible = false;
+                pbreport.Visible = false;
+                pbeval.Visible = false;
             }
         }
 
         public void LoadData()
         {
-            // Data for total employee
+            // Data for start Date
             try
             {
+                // Clear existing data in the chart
+                chartEmployeeDates.Series["Date of Recruitment"].Points.Clear();
+
+                conn.Open();
+
+                // Query to get the number of employees who started each year
+                string query = @"
+                    SELECT 
+                    YEAR(StartDate) AS StartYear, 
+                    COUNT(*) AS EmployeesStarted
+                    FROM tblPersonalRecords
+                    WHERE StartDate IS NOT NULL
+                    GROUP BY YEAR(StartDate)
+                    ORDER BY StartYear";
+
+                cmd = new MySqlCommand(query, conn);
+                reader = cmd.ExecuteReader();
+
+                // Iterate through the data and add points to the chart
+                while (reader.Read())
+                {
+                    int startYear = reader.GetInt32("StartYear");
+                    int employeesStarted = reader.GetInt32("EmployeesStarted");
+
+                    // Add the data to the chart
+                    chartEmployeeDates.Series["Date of Recruitment"].Points.AddXY(startYear, employeesStarted);
+                }
+
+                // Set the chart type to Line
+                chartEmployeeDates.Series["Date of Recruitment"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+
+                // Optional: Set color for the line
+                chartEmployeeDates.Series["Date of Recruitment"].Color = Color.Plum;
+
+                // Optional: Set line width
+                chartEmployeeDates.Series["Date of Recruitment"].BorderWidth = 3;
+
+                // Optional: Set marker for each point
+                chartEmployeeDates.Series["Date of Recruitment"].MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
+                chartEmployeeDates.Series["Date of Recruitment"].MarkerSize = 8;
+
+                // Set the X-axis and Y-axis titles
+                chartEmployeeDates.ChartAreas[0].AxisX.Title = "Year";
+                chartEmployeeDates.ChartAreas[0].AxisY.Title = "Employees Started";
+
+                // Set the background color of the chart area
+                chartEmployeeDates.ChartAreas[0].BackColor = Color.LightYellow;
+
+                // Enable gridlines for the X-axis and Y-axis
+                //chartEmployeeDates.ChartAreas[0].AxisX.GridLineStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+                chartEmployeeDates.ChartAreas[0].AxisX.MajorGrid.LineColor = Color.Gray;
+                //chartEmployeeDates.ChartAreas[0].AxisY.GridLineStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+                chartEmployeeDates.ChartAreas[0].AxisY.MajorGrid.LineColor = Color.Gray;
+
+                // Set a border around the chart area
+                chartEmployeeDates.ChartAreas[0].BorderColor = Color.Black;
+                chartEmployeeDates.ChartAreas[0].BorderWidth = 2;
+                chartEmployeeDates.ChartAreas[0].BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error in loading employee start dates: " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            // Data for total employee and total recruits
+            try
+            {
+                // Retrieve total number of employees
                 if (reader != null && !reader.IsClosed)
                 {
                     reader.Close();
                 }
 
                 conn.Open();
-
                 string query = "SELECT COUNT(*) FROM tblPersonalRecords";
-
                 cmd = new MySqlCommand(query, conn);
-
-                // Execute the query and get the result
                 int numberOfEmployees = Convert.ToInt32(cmd.ExecuteScalar());
+                //txtTotalEmployees.Text = numberOfEmployees.ToString();
 
-                txtTotalEmployees.Text = numberOfEmployees.ToString();
+                // Retrieve total number of recruits
+                query = "SELECT COUNT(Standing) FROM tblEmployeeStatus WHERE Standing = 'Recruit'";
+                cmd = new MySqlCommand(query, conn);
+                int numberOfRecruit = Convert.ToInt32(cmd.ExecuteScalar());
+                //txtTotalRecruit.Text = numberOfRecruit.ToString();
+
+                // Display data in the pie chart
+                chartEmployeeStats.Series["EmployeeStats"].Points.Clear();  // Clear existing data
+
+                // Add data points to the pie chart
+                chartEmployeeStats.Series["EmployeeStats"].Points.AddXY("Employees", numberOfEmployees);
+                chartEmployeeStats.Series["EmployeeStats"].Points.AddXY("Recruits", numberOfRecruit);
+
+                // Set the chart type to Pie
+                chartEmployeeStats.Series["EmployeeStats"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+
+                // Optional: Set colors for the chart
+                chartEmployeeStats.Series["EmployeeStats"].Points[0].Color = Color.LightCoral;
+                chartEmployeeStats.Series["EmployeeStats"].Points[1].Color = Color.PowderBlue;
+
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error in loading the total employee: " + ex.Message);
+                MessageBox.Show("Error in loading employee data: " + ex.Message);
             }
-            finally 
+            finally
             {
                 conn.Close();
             }
@@ -394,36 +505,6 @@ namespace Cafe_Uni_Project
             {
                 conn.Close();
             }
-
-            // Data for number of recruits
-            try
-            {
-                if (reader != null && !reader.IsClosed)
-                {
-                    reader.Close();
-                }
-
-                conn.Open();
-
-                string query = "SELECT COUNT(Standing) FROM tblEmployeeStatus " +
-                    "WHERE Standing = 'Recruit' ";
-
-                cmd = new MySqlCommand(query, conn);
-
-                // Execute the query and get the result
-                int numberOfRecruit = Convert.ToInt32(cmd.ExecuteScalar());
-
-                // Set the text of lblTotalEmployees
-                txtTotalRecruit.Text = numberOfRecruit.ToString();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error in loading the total recruit: " + ex.Message);
-            }
-            finally
-            {
-                conn.Close();
-            }
         }
 
         public void dgvTopPerformerRefresh()
@@ -441,8 +522,8 @@ namespace Cafe_Uni_Project
                     "GS.Ranking FROM tblPersonalRecords PR " +
                     "INNER JOIN tblGeneralStatus GS " +
                     "ON PR.PRID = GS.PRID " +
-                    "ORDER BY GS.Ranking ASC " +
-                    "LIMIT 5 ";
+                    "ORDER BY GS.Rank ASC " +
+                    "LIMIT 10 ";
 
                 cmd = new MySqlCommand(query, conn);
                 reader = cmd.ExecuteReader();
@@ -450,10 +531,32 @@ namespace Cafe_Uni_Project
                 DataTable TopPerformers = new DataTable();
                 TopPerformers.Load(reader);
                 dgvTopPerformers.DataSource = TopPerformers;
+
+                // Set the same Microsoft Sans Serif font for both regular and alternating rows
+                dgvTopPerformers.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
+                dgvTopPerformers.AlternatingRowsDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular); // Disable alternating bold font
+
+                if (dgvTopPerformers.Rows.Count > 0)
+                {
+                    dgvTopPerformers.Rows[0].DefaultCellStyle.BackColor = Color.Gold;
+                    dgvTopPerformers.Rows[0].DefaultCellStyle.ForeColor = Color.Black;
+                }
+
+                // Formatting the DataGridView
+                dgvTopPerformers.Columns[0].HeaderText = "Username";
+                dgvTopPerformers.Columns[1].HeaderText = "First Name";
+                dgvTopPerformers.Columns[2].HeaderText = "Last Name";
+                dgvTopPerformers.Columns[3].HeaderText = "Middle Name";
+                dgvTopPerformers.Columns[4].HeaderText = "Ranking";
+                dgvTopPerformers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+                // Set the Ranking column to sort automatically
+                dgvTopPerformers.Columns["Ranking"].SortMode = DataGridViewColumnSortMode.Automatic;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error loading top performer records: " + ex.Message);
+                MessageBox.Show("Error loading top performer records. Please check the database connection and try again.\nDetails: " + ex.Message,
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {

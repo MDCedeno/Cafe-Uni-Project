@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form6));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnRecruitment = new System.Windows.Forms.Button();
             this.btnReports = new System.Windows.Forms.Button();
@@ -80,18 +81,39 @@
             this.button4 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.dgvPayroll = new System.Windows.Forms.DataGridView();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pbeval = new System.Windows.Forms.PictureBox();
+            this.pbreport = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbUserPicture)).BeginInit();
             this.panel2.SuspendLayout();
             this.panelAdmin.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPayroll)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbeval)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbreport)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Tan;
+            this.panel1.BackColor = System.Drawing.Color.PapayaWhip;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.pictureBox7);
+            this.panel1.Controls.Add(this.pbeval);
+            this.panel1.Controls.Add(this.pbreport);
+            this.panel1.Controls.Add(this.pictureBox4);
+            this.panel1.Controls.Add(this.pictureBox3);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btnRecruitment);
             this.panel1.Controls.Add(this.btnReports);
             this.panel1.Controls.Add(this.btnEmployeeStatus);
@@ -103,35 +125,35 @@
             this.panel1.Controls.Add(this.lblStanding);
             this.panel1.Controls.Add(this.lblUsername);
             this.panel1.Controls.Add(this.pbUserPicture);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(1, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(162, 600);
+            this.panel1.Size = new System.Drawing.Size(164, 626);
             this.panel1.TabIndex = 7;
             // 
             // btnRecruitment
             // 
-            this.btnRecruitment.BackColor = System.Drawing.Color.PeachPuff;
+            this.btnRecruitment.BackColor = System.Drawing.Color.White;
             this.btnRecruitment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRecruitment.Font = new System.Drawing.Font("Impact", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRecruitment.Location = new System.Drawing.Point(2, 454);
+            this.btnRecruitment.Location = new System.Drawing.Point(63, 454);
             this.btnRecruitment.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnRecruitment.Name = "btnRecruitment";
-            this.btnRecruitment.Size = new System.Drawing.Size(156, 48);
+            this.btnRecruitment.Size = new System.Drawing.Size(95, 48);
             this.btnRecruitment.TabIndex = 9;
-            this.btnRecruitment.Text = "Recruitment";
+            this.btnRecruitment.Text = "Employee Evaluation";
             this.btnRecruitment.UseVisualStyleBackColor = false;
             this.btnRecruitment.Click += new System.EventHandler(this.btnRecruitment_Click);
             // 
             // btnReports
             // 
-            this.btnReports.BackColor = System.Drawing.Color.PeachPuff;
+            this.btnReports.BackColor = System.Drawing.Color.White;
             this.btnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReports.Font = new System.Drawing.Font("Impact", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReports.Location = new System.Drawing.Point(2, 408);
+            this.btnReports.Location = new System.Drawing.Point(63, 408);
             this.btnReports.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnReports.Name = "btnReports";
-            this.btnReports.Size = new System.Drawing.Size(156, 48);
+            this.btnReports.Size = new System.Drawing.Size(95, 48);
             this.btnReports.TabIndex = 8;
             this.btnReports.Text = "Reports";
             this.btnReports.UseVisualStyleBackColor = false;
@@ -139,13 +161,13 @@
             // 
             // btnEmployeeStatus
             // 
-            this.btnEmployeeStatus.BackColor = System.Drawing.Color.PeachPuff;
+            this.btnEmployeeStatus.BackColor = System.Drawing.Color.White;
             this.btnEmployeeStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmployeeStatus.Font = new System.Drawing.Font("Impact", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmployeeStatus.Location = new System.Drawing.Point(2, 367);
+            this.btnEmployeeStatus.Location = new System.Drawing.Point(63, 367);
             this.btnEmployeeStatus.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnEmployeeStatus.Name = "btnEmployeeStatus";
-            this.btnEmployeeStatus.Size = new System.Drawing.Size(156, 48);
+            this.btnEmployeeStatus.Size = new System.Drawing.Size(95, 48);
             this.btnEmployeeStatus.TabIndex = 7;
             this.btnEmployeeStatus.Text = "Employee Status";
             this.btnEmployeeStatus.UseVisualStyleBackColor = false;
@@ -153,26 +175,27 @@
             // 
             // btnPayroll
             // 
+            this.btnPayroll.BackColor = System.Drawing.Color.NavajoWhite;
             this.btnPayroll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPayroll.Font = new System.Drawing.Font("Impact", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPayroll.Location = new System.Drawing.Point(2, 320);
+            this.btnPayroll.Location = new System.Drawing.Point(63, 320);
             this.btnPayroll.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnPayroll.Name = "btnPayroll";
-            this.btnPayroll.Size = new System.Drawing.Size(156, 48);
+            this.btnPayroll.Size = new System.Drawing.Size(95, 48);
             this.btnPayroll.TabIndex = 6;
             this.btnPayroll.Text = "Payroll";
-            this.btnPayroll.UseVisualStyleBackColor = true;
+            this.btnPayroll.UseVisualStyleBackColor = false;
             this.btnPayroll.Click += new System.EventHandler(this.btnPayroll_Click);
             // 
             // btnAttendance
             // 
-            this.btnAttendance.BackColor = System.Drawing.Color.PeachPuff;
+            this.btnAttendance.BackColor = System.Drawing.Color.White;
             this.btnAttendance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAttendance.Font = new System.Drawing.Font("Impact", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAttendance.Location = new System.Drawing.Point(2, 276);
+            this.btnAttendance.Location = new System.Drawing.Point(63, 276);
             this.btnAttendance.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnAttendance.Name = "btnAttendance";
-            this.btnAttendance.Size = new System.Drawing.Size(156, 48);
+            this.btnAttendance.Size = new System.Drawing.Size(95, 48);
             this.btnAttendance.TabIndex = 5;
             this.btnAttendance.Text = "Attendance Tracker";
             this.btnAttendance.UseVisualStyleBackColor = false;
@@ -180,13 +203,13 @@
             // 
             // btnPersonal
             // 
-            this.btnPersonal.BackColor = System.Drawing.Color.PeachPuff;
+            this.btnPersonal.BackColor = System.Drawing.Color.White;
             this.btnPersonal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPersonal.Font = new System.Drawing.Font("Impact", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPersonal.Location = new System.Drawing.Point(2, 230);
+            this.btnPersonal.Location = new System.Drawing.Point(63, 230);
             this.btnPersonal.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnPersonal.Name = "btnPersonal";
-            this.btnPersonal.Size = new System.Drawing.Size(156, 48);
+            this.btnPersonal.Size = new System.Drawing.Size(95, 48);
             this.btnPersonal.TabIndex = 4;
             this.btnPersonal.Text = "Personal Records";
             this.btnPersonal.UseVisualStyleBackColor = false;
@@ -194,13 +217,13 @@
             // 
             // btnDashboard
             // 
-            this.btnDashboard.BackColor = System.Drawing.Color.PeachPuff;
+            this.btnDashboard.BackColor = System.Drawing.Color.White;
             this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDashboard.Font = new System.Drawing.Font("Impact", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDashboard.Location = new System.Drawing.Point(2, 182);
+            this.btnDashboard.Location = new System.Drawing.Point(63, 182);
             this.btnDashboard.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Size = new System.Drawing.Size(156, 48);
+            this.btnDashboard.Size = new System.Drawing.Size(95, 48);
             this.btnDashboard.TabIndex = 3;
             this.btnDashboard.Text = "Dashboard";
             this.btnDashboard.UseVisualStyleBackColor = false;
@@ -208,6 +231,7 @@
             // 
             // btnLogout
             // 
+            this.btnLogout.BackColor = System.Drawing.Color.White;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Impact", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.Location = new System.Drawing.Point(32, 535);
@@ -216,7 +240,7 @@
             this.btnLogout.Size = new System.Drawing.Size(100, 35);
             this.btnLogout.TabIndex = 8;
             this.btnLogout.Text = "Log Out";
-            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // lblStanding
@@ -243,6 +267,7 @@
             // 
             // pbUserPicture
             // 
+            this.pbUserPicture.BackColor = System.Drawing.Color.White;
             this.pbUserPicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbUserPicture.Location = new System.Drawing.Point(5, 3);
             this.pbUserPicture.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -254,13 +279,13 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Tan;
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Controls.Add(this.panelAdmin);
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Location = new System.Drawing.Point(166, 0);
+            this.panel2.Location = new System.Drawing.Point(164, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(548, 600);
+            this.panel2.Size = new System.Drawing.Size(550, 600);
             this.panel2.TabIndex = 8;
             // 
             // panelAdmin
@@ -302,6 +327,7 @@
             // 
             // txtNetPay
             // 
+            this.txtNetPay.BackColor = System.Drawing.Color.White;
             this.txtNetPay.Font = new System.Drawing.Font("Impact", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNetPay.Location = new System.Drawing.Point(453, 109);
             this.txtNetPay.Margin = new System.Windows.Forms.Padding(2);
@@ -322,6 +348,7 @@
             // 
             // txtDeductions
             // 
+            this.txtDeductions.BackColor = System.Drawing.Color.White;
             this.txtDeductions.Font = new System.Drawing.Font("Impact", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDeductions.Location = new System.Drawing.Point(453, 73);
             this.txtDeductions.Margin = new System.Windows.Forms.Padding(2);
@@ -332,6 +359,7 @@
             // 
             // txtEarnings
             // 
+            this.txtEarnings.BackColor = System.Drawing.Color.White;
             this.txtEarnings.Font = new System.Drawing.Font("Impact", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEarnings.Location = new System.Drawing.Point(453, 37);
             this.txtEarnings.Margin = new System.Windows.Forms.Padding(2);
@@ -344,6 +372,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Impact", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Black;
             this.label11.Location = new System.Drawing.Point(203, 113);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
@@ -365,6 +394,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Impact", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Black;
             this.label12.Location = new System.Drawing.Point(203, 89);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
@@ -386,6 +416,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Impact", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Black;
             this.label13.Location = new System.Drawing.Point(203, 65);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
@@ -407,6 +438,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Impact", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.Black;
             this.label14.Location = new System.Drawing.Point(203, 41);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
@@ -418,6 +450,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Impact", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(387, 112);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
@@ -439,6 +472,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Impact", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(387, 76);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
@@ -450,6 +484,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Impact", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(7, 113);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
@@ -461,6 +496,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Impact", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(387, 40);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
@@ -482,6 +518,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Impact", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(7, 89);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
@@ -503,6 +540,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Impact", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(7, 65);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
@@ -524,6 +562,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Impact", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(7, 41);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
@@ -544,6 +583,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Impact", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Black;
             this.label10.Location = new System.Drawing.Point(5, 16);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
@@ -553,7 +593,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.BackColor = System.Drawing.Color.IndianRed;
+            this.btnDelete.BackColor = System.Drawing.Color.LightCoral;
             this.btnDelete.Font = new System.Drawing.Font("Impact", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Location = new System.Drawing.Point(219, 144);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
@@ -575,7 +615,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btnSave.BackColor = System.Drawing.Color.Aquamarine;
             this.btnSave.Font = new System.Drawing.Font("Impact", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Location = new System.Drawing.Point(426, 144);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
@@ -588,7 +628,7 @@
             // 
             // btnClear
             // 
-            this.btnClear.BackColor = System.Drawing.Color.DarkOrchid;
+            this.btnClear.BackColor = System.Drawing.Color.Plum;
             this.btnClear.Font = new System.Drawing.Font("Impact", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.Location = new System.Drawing.Point(322, 144);
             this.btnClear.Margin = new System.Windows.Forms.Padding(2);
@@ -603,6 +643,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Impact", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
             this.label9.Location = new System.Drawing.Point(246, 16);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
@@ -612,7 +653,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.BackColor = System.Drawing.Color.CadetBlue;
+            this.btnUpdate.BackColor = System.Drawing.Color.PowderBlue;
             this.btnUpdate.Font = new System.Drawing.Font("Impact", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Location = new System.Drawing.Point(114, 144);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(2);
@@ -625,7 +666,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.Tan;
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.button2);
             this.panel3.Controls.Add(this.button3);
@@ -691,6 +732,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Impact", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(6, 16);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
@@ -700,7 +742,7 @@
             // 
             // dgvPayroll
             // 
-            this.dgvPayroll.BackgroundColor = System.Drawing.Color.PeachPuff;
+            this.dgvPayroll.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Impact", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -720,21 +762,99 @@
             this.dgvPayroll.TabIndex = 74;
             this.dgvPayroll.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPayroll_CellContentClick);
             // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BackColor = System.Drawing.Color.White;
+            this.pictureBox7.Location = new System.Drawing.Point(3, 454);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(55, 48);
+            this.pictureBox7.TabIndex = 31;
+            this.pictureBox7.TabStop = false;
+            this.pictureBox7.Visible = false;
+            // 
+            // pbeval
+            // 
+            this.pbeval.BackColor = System.Drawing.Color.Transparent;
+            this.pbeval.Image = global::Cafe_Uni_Project.Properties.Resources.Evaluation;
+            this.pbeval.Location = new System.Drawing.Point(3, 408);
+            this.pbeval.Name = "pbeval";
+            this.pbeval.Size = new System.Drawing.Size(55, 48);
+            this.pbeval.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbeval.TabIndex = 30;
+            this.pbeval.TabStop = false;
+            // 
+            // pbreport
+            // 
+            this.pbreport.BackColor = System.Drawing.Color.Transparent;
+            this.pbreport.Image = global::Cafe_Uni_Project.Properties.Resources.Reports;
+            this.pbreport.Location = new System.Drawing.Point(3, 367);
+            this.pbreport.Name = "pbreport";
+            this.pbreport.Size = new System.Drawing.Size(55, 43);
+            this.pbreport.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbreport.TabIndex = 29;
+            this.pbreport.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.NavajoWhite;
+            this.pictureBox4.Image = global::Cafe_Uni_Project.Properties.Resources.Status;
+            this.pictureBox4.Location = new System.Drawing.Point(3, 320);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(55, 49);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 28;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.Image = global::Cafe_Uni_Project.Properties.Resources.Attendance;
+            this.pictureBox3.Location = new System.Drawing.Point(3, 278);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(55, 43);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 27;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::Cafe_Uni_Project.Properties.Resources.Records;
+            this.pictureBox2.Location = new System.Drawing.Point(3, 230);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(55, 48);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 26;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::Cafe_Uni_Project.Properties.Resources.Dashboard;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 182);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(55, 48);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 25;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.Color.PeachPuff;
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::Cafe_Uni_Project.Properties.Resources.Backround;
             this.ClientSize = new System.Drawing.Size(714, 611);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.MaximumSize = new System.Drawing.Size(730, 650);
             this.MinimumSize = new System.Drawing.Size(730, 650);
             this.Name = "Form6";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cafe Uni Payroll";
+            this.Text = "Payroll";
             this.Load += new System.EventHandler(this.Form6_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -745,6 +865,13 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPayroll)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbeval)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbreport)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -802,5 +929,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtStandardPay;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pbeval;
+        private System.Windows.Forms.PictureBox pbreport;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
